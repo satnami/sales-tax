@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
-require './lib/csv_reader.rb'
+# TODO rspec!
 
-CSVReader.parse ARGF.read
+require './lib/csv_parser'
+
+CSVParser.parse ARGF.read
