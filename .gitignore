@@ -30,3 +30,4 @@ tmp
 .ruby-gemset
 bin/
 tmp/
+output.csv
