@@ -3,5 +3,8 @@
 # TODO rspec!
 
 require './lib/csv_parser'
+require './lib/printer'
 
-CSVParser.parse ARGF.read
+products = CSVParser.parse ARGF.read
+Printer.stdout(products)
+Printer.csv(products)
