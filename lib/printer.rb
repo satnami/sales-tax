@@ -7,7 +7,7 @@ module Printer
   def stdout(output)
     puts output.each(&:to_s)
     puts
-    puts "Sales Taxes: #{'%.2f' % output.map(&:total_price).reduce(:+).to_f.round2}"
+    puts "Sales Taxes: #{'%.2f' % output.map(&:total_tax).reduce(:+).to_f.round2}"
     puts "Total: #{'%.2f' % output.map(&:total_price).reduce(:+).to_f.round2}"
   end
 
@@ -17,7 +17,7 @@ module Printer
       lines << item.to_s.split(', ')
     end
     lines << []
-    lines << ["Sales Taxes: #{'%.2f' % output.map(&:total_price).reduce(:+).to_f.round2}"]
+    lines << ["Sales Taxes: #{'%.2f' % output.map(&:total_tax).reduce(:+).to_f.round2}"]
     lines << ["Total: #{'%.2f' % output.map(&:total_price).reduce(:+).to_f.round2}"]
     CSVParser.write lines
   end
